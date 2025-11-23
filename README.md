@@ -1,61 +1,71 @@
-# 🔒 LoginPage - Sistema de Login em Python
+# 🔒 LoginPage - Python Login System
 
-Este projeto implementa uma página de login utilizando Python com a biblioteca Tkinter e conexão a um banco de dados MariaDB/MySQL. O objetivo é autenticar usuários utilizando um formulário gráfico, permitindo um login simples e eficaz para sistemas desktop. Após o login bem-sucedido, o sistema redireciona o usuário para a página de cadastro.
+This project implements a login page using Python with the **Tkinter** library and a **MariaDB/MySQL** database connection. The goal is to authenticate users using a graphical form, providing a simple and effective login for desktop systems. After a successful login, the system redirects the user to the registration page.
 
-## ⚙️ Funcionalidades
-- 🔐 Autenticação de usuários através de um formulário gráfico (GUI) com email e senha.
-- 🔗 Conexão com banco de dados MariaDB/MySQL para validação dos usuários.
-- ⚠️ Tratamento de erros, como falha de conexão com o banco de dados ou credenciais inválidas.
-- ➡️ Redirecionamento para a página de cadastro após um login bem-sucedido.
+## ⚙️ Features
 
-## 📂 Estrutura do Projeto
-- **LoginForm**: Classe responsável pela interface gráfica do login, tratamento dos eventos e autenticação do usuário.
-- **CadastroForm**: Classe responsável pela interface gráfica do cadastro de novos usuários e conexão com o banco de dados para armazenar os dados.
+* 🔐 User authentication via a graphical form (GUI) with email and password.
+* 🔗 Connection to MariaDB/MySQL database for user validation.
+* ⚠️ Error handling, such as database connection failure or invalid credentials.
+* ➡️ Redirect to the registration page after a successful login.
 
-## 🛠️ Requisitos
-- 🐍 **Python 3.8+**
-- 🐬 **MariaDB/MySQL**
-- 📦 **Bibliotecas Python necessárias**:
-  - `mysql-connector-python`
-  - `tkinter` (já incluída no Python padrão)
+## 📂 Project Structure
 
-Você pode instalar o conector MySQL usando o seguinte comando:
+* **LoginForm**: Class responsible for the login GUI, handling events, and user authentication.
+* **CadastroForm**: Class responsible for the registration GUI and database connection to store user data.
+
+## 🛠️ Requirements
+
+* 🐍 **Python 3.8+**
+* 🐬 **MariaDB/MySQL**
+* 📦 **Required Python libraries**:
+
+  * `mysql-connector-python`
+  * `tkinter` (included in standard Python)
+
+You can install the MySQL connector using the following command:
+
 ```bash
 pip install mysql-connector-python
 ```
 
-## ⚙️ Configuração do Banco de Dados
-1. 🖥️ Inicie o servidor MariaDB/MySQL através do XAMPP ou outra ferramenta.
-2. 📊 Crie um banco de dados chamado `pieralini__login`.
-3. 📝 Crie uma tabela `users` com os seguintes campos:
+## ⚙️ Database Setup
+
+1. 🖥️ Start the MariaDB/MySQL server using XAMPP or another tool.
+2. 📊 Create a database called `pieralini__login`.
+3. 📝 Create a `users` table with the following fields:
+
    ```sql
    CREATE TABLE users (
        id INT AUTO_INCREMENT PRIMARY KEY,
        name VARCHAR(100),
        email VARCHAR(100) UNIQUE,
        phone VARCHAR(15),
-       adress VARCHAR(255),
+       address VARCHAR(255),
        password VARCHAR(100)
    );
    ```
-4. ➕ Insira alguns registros de teste para validar o sistema de login.
+4. ➕ Insert some test records to validate the login system.
 
-## ▶️ Como Executar
-1. 💻 Certifique-se de que o Python 3 está instalado em seu sistema.
-2. ⚙️ Configure o banco de dados conforme as instruções acima.
-3. 🐍 Execute o script Python para iniciar a aplicação:
+## ▶️ How to Run
+
+1. 💻 Make sure Python 3 is installed on your system.
+2. ⚙️ Configure the database according to the instructions above.
+3. 🐍 Run the Python script to start the application:
+
    ```bash
    python login_form.py
    ```
 
-## 📞 Contato
-- **Dev**: Igor Pieralini
-- ✉️ **Email**: [igorpieralini@gmail.com](mailto:igorpieralini@gmail.com)
+## 📞 Contact
 
-Fique à vontade para entrar em contato em caso de dúvidas ou sugestões!
+* **Developer**: Igor Pieralini
+* ✉️ **Email**: [igorpieralini@gmail.com](mailto:igorpieralini@gmail.com)
 
-## 🌟 Melhorias Futuras
-- 🔒 Implementação de hashing de senha para maior segurança.
-- ➕ Adicionar opções de recuperação de senha.
-- 🎨 Melhorar a interface gráfica para torná-la mais amigável e responsiva.
+Feel free to reach out with questions or suggestions!
 
+## 🌟 Future Improvements
+
+* 🔒 Implement password hashing for increased security.
+* ➕ Add password recovery options.
+* 🎨 Improve the GUI for a more friendly and responsive interface.
